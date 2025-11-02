@@ -1,4 +1,4 @@
-# BitDateTime 🗜️⏰
+# BitDT 🗜️⏰
 
 [![Java Version](https://img.shields.io/badge/Java-7%2B-blue.svg)](https://java.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -145,7 +145,7 @@ System.out.println("First before last: " + first.before(last));
 
 ### Bit Packing Strategy
 
-BitDateTime uses sophisticated bit packing to store all date-time components in a single 64-bit long:
+BitDT (BitDateTime) uses sophisticated bit packing to store all date-time components in a single 64-bit long:
 
 ```
 [4 bits: Type][20 bits: Year][4 bits: Month][5 bits: Day]
@@ -327,4 +327,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Ready to optimize your date-time storage? Give BitDateTime a ⭐ and start saving space today!
 
 </div>
-```
