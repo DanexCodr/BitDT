@@ -317,7 +317,7 @@ Found a bug? Please create an issue with:
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [**LICENSE file**](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [**LICENSE file**](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
