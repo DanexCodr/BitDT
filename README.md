@@ -18,6 +18,13 @@ A highly efficient, compact date-time encoding library for Java that provides **
 - **🎯 Millisecond Precision** - Complete temporal accuracy
 - **📦 Zero Dependencies** - Pure Java implementation
 
+## 📚 Documentation
+
+- [**README**](README.md) - Main documentation (you are here)
+- [**Changelog**](CHANGELOG.md) - Version history and releases  
+- [**Contributing**](CONTRIBUTING.md) - How to contribute to this project
+- [**License**](LICENSE) - MIT License details
+
 ## 📊 Performance Comparison
 
 | Use Case | Traditional Size | BitDateTime Size | Reduction |
@@ -284,7 +291,7 @@ Millisecond encoding:
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our Contributing Guide for details.
+We welcome contributions! Please see our [**Contributing Guide**](CONTRIBUTING.md) for details.
 
 1. Fork the repository
 
@@ -310,7 +317,7 @@ Found a bug? Please create an issue with:
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [**LICENSE file**](LICENSE.md) file for details.
 
 ## 🙏 Acknowledgments
 
@@ -324,6 +331,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 <div align="center">
 
-Ready to optimize your date-time storage? Give BitDateTime a ⭐ and start saving space today!
+Ready to optimize your date-time storage? Give BitDT a ⭐ and start saving space today!
 
 </div>
