@@ -63,13 +63,13 @@ cd BitDT
 # Copy src/danexcodr/time/ directory to your project
 ```
 
-Option 3: Manual Download
+#### Option 3: Manual Download
 
 1. Download individual .java files from the src/danexcodr/time/ directory
 2. Place them in your project maintaining the package structure
 3. Compile with your Java compiler
 
-🔜 Package Manager Support (Coming Soon)
+### 🔜 Package Manager Support (Coming Soon)
 
 Maven Central and Gradle plugin support planned for future release
 
