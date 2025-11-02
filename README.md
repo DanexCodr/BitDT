@@ -40,13 +40,13 @@ A highly efficient, compact date-time encoding library for Java that provides **
 </dependency>
 ```
 
-Gradle
+#### Gradle
 
 ```groovy
 implementation 'com.danexcodr:bitdatetime:1.0.0'
 ```
 
-Basic Usage
+## Basic Usage
 
 ```java
 import danexcodr.time.BitDT;
@@ -66,7 +66,7 @@ BitDT decoded = BitDT.decode(encoded);
 System.out.println("Round-trip successful: " + dateTime.equals(decoded));
 ```
 
-Efficient Bulk Operations
+## Efficient Bulk Operations
 
 ```java
 // Create array of dates for efficient processing
@@ -89,9 +89,9 @@ BitDTArray slice = dateArray.slice(0, 2);
 BitDTArray combined = slice.concat(dateOnly);
 ```
 
-📖 Comprehensive Examples
+## 📖 Comprehensive Examples
 
-Different Date Types
+### Different Date Types
 
 ```java
 // Full date-time with timezone
@@ -111,7 +111,7 @@ BitDT empty = BitDT.createEmpty();
 System.out.println("Empty: " + empty.encode());
 ```
 
-Timezone Handling
+## Timezone Handling
 
 ```java
 // Different timezone formats
@@ -124,7 +124,7 @@ System.out.println("EST: " + est.encode() + " -> " + est.getTimezone());
 System.out.println("IST: " + ist.encode() + " -> " + ist.getTimezone());
 ```
 
-Sorting and Comparison
+## Sorting and Comparison
 
 ```java
 List<BitDT> events = new ArrayList<>();
@@ -141,9 +141,9 @@ BitDT last = sorted.get(sorted.size() - 1);
 System.out.println("First before last: " + first.before(last));
 ```
 
-🏗️ Architecture
+## 🏗️ Architecture
 
-Bit Packing Strategy
+### Bit Packing Strategy
 
 BitDateTime uses sophisticated bit packing to store all date-time components in a single 64-bit long:
 
@@ -152,7 +152,7 @@ BitDateTime uses sophisticated bit packing to store all date-time components in 
 [5 bits: Hour][6 bits: Minute][6 bits: Second][10 bits: Millis][4 bits: Reserved]
 ```
 
-Character Encoding
+### Character Encoding
 
 The library employs multiple optimized character sets:
 
@@ -162,9 +162,9 @@ The library employs multiple optimized character sets:
 · Time components: Optimized character ranges avoiding ambiguous characters
 · Zero compression: Special characters for repeated zeros
 
-🔧 Advanced Usage
+## 🔧 Advanced Usage
 
-Custom Date Ranges
+### Custom Date Ranges
 
 ```java
 // Convert between relative and absolute years
@@ -175,7 +175,7 @@ BitDT date = BitDT.fromPrimitives(relativeYear, 5, 15, 14, 30, 0, 0, null);
 int recoveredYear = BitDT.toAbsoluteYear(date.getYear());
 ```
 
-Efficient Storage for Databases
+### Efficient Storage for Databases
 
 ```java
 // Store as numerical values for maximum efficiency
@@ -185,7 +185,7 @@ long[] numericalValues = BitDT.toNumericalArray(dates);
 List<BitDT> restoredDates = BitDT.fromNumericalArray(numericalValues);
 ```
 
-Error Handling
+### Error Handling
 
 ```java
 try {
@@ -199,29 +199,39 @@ BitDT invalid = BitDT.decode("INVALID_STRING");
 System.out.println("Is empty: " + invalid.isEmpty());
 ```
 
-🎯 Use Cases
+## 🎯 Use Cases
 
-Ideal For:
+### Ideal For:
 
 · Database timestamp storage - Reduce storage requirements by 60-80%
+
 · High-frequency logging - Compact timestamps for log files
+
 · Network protocols - Efficient date-time transmission
+
 · Embedded systems - Low memory footprint applications
+
 · Time-series databases - High-density temporal data storage
+
 · Mobile applications - Reduce data transmission costs
+
 · Caching systems - Efficient timestamp metadata
 
-Performance-Sensitive Applications:
+#### Performance-Sensitive Applications:
 
 · Financial trading systems
+
 · IoT device data collection
+
 · Real-time analytics platforms
+
 · High-volume transaction processing
+
 · Distributed systems with frequent clock synchronization
 
-📊 Benchmarks
+## 📊 Benchmarks
 
-Memory Efficiency
+### Memory Efficiency
 
 ```
 Traditional Java Date: ~24 bytes
@@ -229,7 +239,7 @@ BitDateTime encoded: ~8 bytes (66% reduction)
 BitDateTime packed: 8 bytes + 1 byte timezone (62% reduction)
 ```
 
-Encoding/Decoding Speed
+### Encoding/Decoding Speed
 
 ```
 Encoding: ~0.5-2 microseconds per operation
@@ -237,62 +247,77 @@ Decoding: ~1-3 microseconds per operation
 Bulk operations: 3-5x faster than individual objects
 ```
 
-🔍 API Reference
+## 🔍 API Reference
 
-Core Classes
+### Core Classes
 
-BitDT
+#### BitDT
 
 Main date-time class with methods for:
 
 · fromPrimitives() - Create from components
 · encode()/decode() - Compact string representation
+
 · getNumericalValue() - Raw numerical form
+
 · Comparison methods (before(), after(), compareTo())
 
-BitDTArray
+#### BitDTArray
 
 Efficient bulk operations:
 
 · fromList()/toList() - Conversion
+
 · sorted() - Efficient sorting
+
 · filterByType() - Date type filtering
+
 · slice()/concat() - Array operations
 
-ThousandCounter
+#### ThousandCounter
 
 Millisecond encoding:
 
 · encodeMilliseconds() - 0-999 to 2 characters
+
 · decodeMilliseconds() - Reverse encoding
 
-🤝 Contributing
+## 🤝 Contributing
 
 We welcome contributions! Please see our Contributing Guide for details.
 
 1. Fork the repository
+
 2. Create a feature branch (git checkout -b feature/amazing-feature)
+
 3. Commit your changes (git commit -m 'Add amazing feature')
+
 4. Push to the branch (git push origin feature/amazing-feature)
+
 5. Open a Pull Request
 
-🐛 Reporting Issues
+## 🐛 Reporting Issues
 
 Found a bug? Please create an issue with:
 
 · Detailed description
+
 · Reproduction steps
+
 · Expected vs actual behavior
+
 · Environment details
 
-📝 License
+## 📝 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-🙏 Acknowledgments
+## 🙏 Acknowledgments
 
 · Inspired by the need for efficient temporal data storage in high-performance systems
+
 · Thanks to the Java community for best practices and patterns
+
 · Special thanks to contributors and testers
 
 ---
