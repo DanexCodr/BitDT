@@ -38,8 +38,43 @@ A highly efficient, compact date-time encoding library for Java that provides **
 
 ### Installation
 
-#### Maven
+Since BitDT is currently available as source code, you have several options:
+
+#### Option 1: Download Source Files
+Download the Java files and add them to your project's source directory:
+
+```
+
+src/
+└──danexcodr/
+└── time/
+├── BitDT.java          # Main date-time class
+├── BitDTArray.java     # Bulk operations
+        ├── ThousandCounter.java # Millisecond encoding
+├── BitDTExample.java   # Usage examples
+└── BitDTTest.java      # Test suite
+
+```
+
+#### Option 2: Clone and Copy
+```bash
+git clone https://github.com/Danexcodr/BitDT.git
+cd BitDT
+# Copy src/danexcodr/time/ directory to your project
+```
+
+Option 3: Manual Download
+
+1. Download individual .java files from the src/danexcodr/time/ directory
+2. Place them in your project maintaining the package structure
+3. Compile with your Java compiler
+
+🔜 Package Manager Support (Coming Soon)
+
+Maven Central and Gradle plugin support planned for future release
+
 ```xml
+<!-- Future Maven Support -->
 <dependency>
     <groupId>com.danexcodr</groupId>
     <artifactId>bitdatetime</artifactId>
@@ -47,9 +82,8 @@ A highly efficient, compact date-time encoding library for Java that provides **
 </dependency>
 ```
 
-#### Gradle
-
 ```groovy
+// Future Gradle Support
 implementation 'com.danexcodr:bitdatetime:1.0.0'
 ```
 
