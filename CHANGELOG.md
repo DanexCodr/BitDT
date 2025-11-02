@@ -4,7 +4,7 @@
 
 ### Added
 
-· BitDTEpoch class for flexible epoch timestamp encoding
+· BitDTEpoch utility class for epoch timestamp conversions
 
 · Multiple encoding modes: AUTO, BASE36, FULL_BITDT
 
@@ -34,10 +34,12 @@
 
 · Initial release of BitDT (BitDateTime)
 
-· Core BitDT class with encoding/decoding
+· Core BitDT class with compact date-time encoding/decoding
 
-· BitDTArray for bulk operations
+· BitDTArray for memory-optimized bulk operations
 
-· Comprehensive test suite
+· ThousandCounter for millisecond encoding
 
-· Example usage documentation
+· BitDTExample class with practical usage examples
+
+· Comprehensive test suite (BitDTTest)
