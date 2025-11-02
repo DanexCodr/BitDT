@@ -43,7 +43,7 @@ Since BitDT is currently available as source code, you have several options:
 #### Option 1: Download Source Files
 Download the Java files and add them to your project's source directory:
 
-```
+```bash
 
 src/
 └──main/
@@ -55,8 +55,10 @@ src/
                       ├── ThousandCounter.java # Millisecond encoding
                       ├── BitDTExample.java   # Usage examples
                       └── BitDTTest.java      # Test suite
+```
 
 #### Option 2: Clone and Copy
+
 ```bash
 git clone https://github.com/Danexcodr/BitDT.git
 cd BitDT
