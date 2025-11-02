@@ -46,15 +46,16 @@ Download the Java files and add them to your project's source directory:
 ```bash
 
 src/
-└──main/
-      └── java/
-             └── danexcodr/
-                      └── time/
-                      ├── BitDT.java    # Main date-time class
-                      ├── BitDTArray.java     # Bulk operations
-                      ├── ThousandCounter.java # Millisecond encoding
-                      ├── BitDTExample.java   # Usage examples
-                      └── BitDTTest.java      # Test suite
+└──main/java/danexcodr/time/
+   ├── BitDT.java    # Main date-time class
+   ├── BitDTArray.java     # Bulk operations
+   ├── ThousandCounter.java # Millisecond encoding
+   ├── BitDTEpoch.java # Utility class for epoch
+└──example/java/danexcodr/time/
+   ├── BitDTExample.java   # Usage examples
+└──test/java/danexcodr/time/
+   └── BitDTTest.java      # Test suite
+   └── BitDTEpochTest.java      # Test epoch suite
 ```
 
 #### Option 2: Clone and Copy
