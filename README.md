@@ -1,9 +1,9 @@
 # BitDT 🗜️⏰
 
-[![Java Version](https://img.shields.io/badge/Java-7%2B-blue.svg)](https://java.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Issues](https://img.shields.io/github/issues/Danexcodr/BitDT.svg)](https://github.com/Danexcodr/BitDT/issues)
-[![GitHub Stars](https://img.shields.io/github/stars/Danexcodr/BitDT.svg)](https://github.com/Danexcodr/BitDT/stargazers)
+[![Java Version](img.shields.io/badge/Java-7%2B-blue.svg)](java.com)
+[![License: MIT](img.shields.io/badge/License-MIT-yellow.svg)](opensource.org/licenses/MIT)
+[![GitHub Issues](img.shields.io/github/issues/Danexcodr/BitDT.svg)](github.com/Danexcodr/BitDT/issues)
+[![GitHub Stars](img.shields.io/github/stars/Danexcodr/BitDT.svg)](github.com/Danexcodr/BitDT/stargazers)
 
 A highly efficient, compact date-time encoding library for Java that provides **60-80% space savings** through advanced bit packing and character encoding techniques. Perfect for applications requiring high-density timestamp storage or transmission.
 
