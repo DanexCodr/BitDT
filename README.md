@@ -63,7 +63,7 @@ src/
 ```bash
 git clone https://github.com/Danexcodr/BitDT.git
 cd BitDT
-# Copy src/danexcodr/time/ directory to your project
+# Copy src/main/java/danexcodr/time/ directory to your project
 ```
 
 #### Option 3: Manual Download
