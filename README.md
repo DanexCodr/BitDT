@@ -1,6 +1,6 @@
 # BitDT 🗜️⏰
 
-[![Java Version](img.shields.io/badge/Java-7%2B-blue.svg)](java.com)
+[![Java Version](https://img.shields.io/badge/Java-7%2B-blue.svg)](java.com)
 [![License: MIT](img.shields.io/badge/License-MIT-yellow.svg)](opensource.org/licenses/MIT)
 [![GitHub Issues](img.shields.io/github/issues/Danexcodr/BitDT.svg)](github.com/Danexcodr/BitDT/issues)
 [![GitHub Stars](img.shields.io/github/stars/Danexcodr/BitDT.svg)](github.com/Danexcodr/BitDT/stargazers)
