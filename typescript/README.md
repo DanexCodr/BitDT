@@ -1,4 +1,4 @@
-# BitDT for TypeScript/JavaScript 🗜️⏰
+# BitDT for TypeScript/ JavaScript 🗜️⏰
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-✓-3178C6.svg)](https://typescriptlang.org)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES2020%2B-yellow.svg)](https://javascript.com)
