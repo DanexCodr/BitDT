@@ -44,7 +44,7 @@
 
 ### Added
 
-· Initial release of BitDT (BitDateTime)
+· Initial release of BitDT Java (BitDateTime)
 
 · Core BitDT class with compact date-time encoding/decoding
 
