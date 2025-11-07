@@ -2,6 +2,10 @@
 
 ## [1.1.2] - 2025-11-07
 
+### Added
+
+· Typescript support
+
 ### Updated
 
 · Reorganized the /src path to be /java/src instead. For the future update.
