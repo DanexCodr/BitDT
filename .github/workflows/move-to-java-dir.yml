@@ -1,0 +1,30 @@
+name: Move src to java/src
+
+on:
+  workflow_dispatch:  # Manual trigger only
+
+permissions:
+  contents: write    # This allows the workflow to push changes
+
+jobs:
+  move-src:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}  # Important for push access
+        
+    - name: Move src to java/src
+      run: |
+        mkdir -p java
+        mv src java/src
+        
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "Move src/ to java/src/"
+        git push
