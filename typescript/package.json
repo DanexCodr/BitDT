@@ -1,0 +1,15 @@
+{
+  "name": "bitdt-typescript",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "test": "node dist/BitDTTest.js",
+    "example": "node dist/BitDTExample.js",
+    "epoch-test": "node dist/BitDTEpochTest.js",
+    "all": "npm run test && npm run example && npm run epoch-test",
+    "clean": "rm -rf dist/*"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
