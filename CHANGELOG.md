@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.2] - 2025-11-07
+
+### Updated
+
+· Reorganized the /src path to be /java/src instead. For the future update.
+
 ## [1.1.0] - 2025-11-03
 
 ### Added
