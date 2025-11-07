@@ -239,7 +239,7 @@ const { BitDT } = await import('./dist/BitDT.js');
 
 ---
 
-Ready to optimize your web application? ← Back to Main README
+Ready to optimize your web application?   [←Back to Main README](./README.md)
 
 <div align="center">
 
