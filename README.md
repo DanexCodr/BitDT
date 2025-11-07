@@ -1,11 +1,16 @@
 # BitDT 🗜️⏰
 
-[![Java Version](https://img.shields.io/badge/Java-7%2B-blue.svg)](htts://java.com)
+[![Java](https://img.shields.io/badge/Java-7%2B-blue.svg)](https://java.com)
+[![TypeScript](https://img.shields.io/badge/TypeScript-✓-3178C6.svg)](https://typescriptlang.org)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2020%2B-yellow.svg)](https://javascript.com)
+[![Built on Phone](https://img.shields.io/badge/Built%20on%20Phone-8hrs-orange.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Issues](https://img.shields.io/github/issues/Danexcodr/BitDT.svg)](https://github.com/Danexcodr/BitDT/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/Danexcodr/BitDT.svg)](https://github.com/Danexcodr/BitDT/stargazers)
 
-A highly efficient, compact date-time encoding library for Java that provides **60-80% space savings** through advanced bit packing and character encoding techniques. Perfect for applications requiring high-density timestamp storage or transmission.
+A highly efficient, compact date-time encoding library that provides **60-80% space savings** through advanced bit packing and character encoding techniques. Available in **multiple programming languages**.
+
+> 🚀 **Built entirely on a phone in 8 hours** using AI assistance
 
 ## 🌟 Key Features
 
@@ -16,352 +21,171 @@ A highly efficient, compact date-time encoding library for Java that provides **
 - **🛡️ Immutable & Thread-Safe** - Predictable behavior in concurrent environments
 - **🔧 Multiple Date Types** - Full, date-only, time-only, and empty variants
 - **🎯 Millisecond Precision** - Complete temporal accuracy
-- **📦 Zero Dependencies** - Pure Java implementation
+- **📦 Zero Dependencies** - Pure implementations in each language
 
-## 📚 Documentation
+## 📚 Language Implementations
 
-- [**README**](README.md) - Main documentation (you are here)
-- [**Changelog**](CHANGELOG.md) - Version history and releases  
-- [**Contributing**](CONTRIBUTING.md) - How to contribute to this project
-- [**License**](LICENSE) - MIT License details
+### [**Java**](./java/README.md) ✅
+Enterprise-ready implementation with bulk operations and advanced features.
+
+**Ideal for:** Servers, Android apps, enterprise systems, high-performance applications
+
+### [**TypeScript/JavaScript**](./typescript/README.md) ✅  
+Modern web-ready implementation with full type safety and Node.js support.
+
+**Ideal for:** Web applications, Node.js servers, full-stack development, browsers
 
 ## 📊 Performance Comparison
 
-| Use Case | Traditional Size | BitDateTime Size | Reduction |
-|----------|-----------------|------------------|-----------|
+| Use Case | Traditional Size | BitDT Size | Reduction |
+|----------|-----------------|------------|-----------|
 | Full date-time | ~20-30 bytes | ~6-10 bytes | ~70% |
 | Date-only | ~10-15 bytes | ~2-4 bytes | ~80% |
 | Time-only | ~8-12 bytes | ~3-5 bytes | ~60% |
 | Bulk storage (1000 items) | ~20-30 KB | ~6-10 KB | ~70% |
 
-## 🚀 Quick Start
-
-### Installation
-
-Since BitDT is currently available as source code, you have several options:
-
-#### Option 1: Download Source Files
-Download the Java files and add them to your project's source directory:
-
-```bash
-
-src/
-└──main/java/danexcodr/time/
-   ├── BitDT.java    # Main date-time class
-   ├── BitDTArray.java     # Bulk operations
-   ├── ThousandCounter.java # Millisecond encoding
-   ├── BitDTEpoch.java # Utility class for epoch
-└──example/java/danexcodr/time/
-   ├── BitDTExample.java   # Usage examples
-└──test/java/danexcodr/time/
-   └── BitDTTest.java      # Test suite
-   └── BitDTEpochTest.java      # Test epoch suite
-```
-
-#### Option 2: Clone and Copy
-
-```bash
-git clone https://github.com/Danexcodr/BitDT.git
-cd BitDT
-# Copy src/main/java/danexcodr/time/ directory to your project
-```
-
-#### Option 3: Manual Download
-
-1. Download individual .java files from the src/danexcodr/time/ directory
-2. Place them in your project maintaining the package structure
-3. Compile with your Java compiler
-
-### 🔜 Package Manager Support (Coming Soon)
-
-Maven Central and Gradle plugin support planned for future release
-
-```xml
-<!-- Future Maven Support -->
-<dependency>
-    <groupId>com.danexcodr</groupId>
-    <artifactId>bitdatetime</artifactId>
-    <version>1.0.0</version>
-</dependency>
-```
-
-```groovy
-// Future Gradle Support
-implementation 'com.danexcodr:bitdatetime:1.0.0'
-```
-
-## Basic Usage
-
-```java
-import danexcodr.time.BitDT;
-import danexcodr.time.BitDTArray;
-import java.util.*;
-
-// Create a compact date-time
-BitDT dateTime = BitDT.fromPrimitives(2024, 5, 15, 14, 30, 45, 123, "+08:00");
-String encoded = dateTime.encode(); // Returns compact string like "ABC123Xyz+08"
-
-System.out.println("Encoded: " + encoded); // ~6-10 characters instead of 20+
-
-// Decode back to full date-time
-BitDT decoded = BitDT.decode(encoded);
-
-// Verify round-trip
-System.out.println("Round-trip successful: " + dateTime.equals(decoded));
-```
-
-## Efficient Bulk Operations
-
-```java
-// Create array of dates for efficient processing
-List<BitDT> dates = Arrays.asList(
-    BitDT.fromPrimitives(2024, 5, 15, 14, 30, 0, 0, null),
-    BitDT.fromPrimitives(2024, 3, 10, 9, 0, 0, 0, null),
-    BitDT.fromPrimitives(2024, 1, 1, 0, 0, 0, 0, "+05:30")
-);
-
-BitDTArray dateArray = BitDTArray.fromList(dates);
-
-// Sort efficiently
-BitDTArray sortedArray = dateArray.sorted();
-
-// Filter by date type
-BitDTArray dateOnly = dateArray.getDateOnly();
-
-// Slice and concatenate
-BitDTArray slice = dateArray.slice(0, 2);
-BitDTArray combined = slice.concat(dateOnly);
-```
-
-## 📖 Comprehensive Examples
-
-### Different Date Types
-
-```java
-// Full date-time with timezone
-BitDT full = BitDT.fromPrimitives(2024, 5, 15, 14, 30, 45, 123, "+08:00");
-System.out.println("Full: " + full.encode());
-
-// Date-only (no time component)
-BitDT dateOnly = BitDT.fromPrimitives(2024, 5, 15, 0, 0, 0, 0, null);
-System.out.println("Date only: " + dateOnly.encode());
-
-// Time-only (no date component)
-BitDT timeOnly = BitDT.fromPrimitives(0, 0, 0, 14, 30, 45, 123, null);
-System.out.println("Time only: " + timeOnly.encode());
-
-// Empty timestamp
-BitDT empty = BitDT.createEmpty();
-System.out.println("Empty: " + empty.encode());
-```
-
-## Timezone Handling
-
-```java
-// Different timezone formats
-BitDT utc = BitDT.fromPrimitives(2024, 5, 15, 14, 30, 0, 0, "+00");
-BitDT est = BitDT.fromPrimitives(2024, 5, 15, 14, 30, 0, 0, "-05");
-BitDT ist = BitDT.fromPrimitives(2024, 5, 15, 14, 30, 0, 0, "+05:30");
-
-System.out.println("UTC: " + utc.encode() + " -> " + utc.getTimezone());
-System.out.println("EST: " + est.encode() + " -> " + est.getTimezone());
-System.out.println("IST: " + ist.encode() + " -> " + ist.getTimezone());
-```
-
-## Sorting and Comparison
-
-```java
-List<BitDT> events = new ArrayList<>();
-events.add(BitDT.fromPrimitives(2024, 5, 15, 14, 30, 0, 0, null));
-events.add(BitDT.fromPrimitives(2024, 3, 10, 9, 0, 0, 0, null));
-events.add(BitDT.fromPrimitives(2024, 1, 1, 0, 0, 0, 0, null));
-
-// Sort by numerical value
-List<BitDT> sorted = BitDT.sortByNumericalValue(events);
-
-// Compare dates
-BitDT first = sorted.get(0);
-BitDT last = sorted.get(sorted.size() - 1);
-System.out.println("First before last: " + first.before(last));
-```
-
-## 🏗️ Architecture
+## 🏗️ Architecture Overview
 
 ### Bit Packing Strategy
 
-BitDT (BitDateTime) uses sophisticated bit packing to store all date-time components in a single 64-bit long:
+BitDT uses sophisticated bit packing to store all date-time components efficiently:
 
 ```
-[4 bits: Type][20 bits: Year][4 bits: Month][5 bits: Day]
-[5 bits: Hour][6 bits: Minute][6 bits: Second][10 bits: Millis][4 bits: Reserved]
+
+[4 bits: Type]
+[20 bits: Year]
+[4 bits: Month]
+[5 bits: Day]
+[5 bits: Hour]
+[6 bits: Minute]
+[6 bits: Second]
+[10 bits: Millis]
+[4 bits: Reserved]
+
 ```
 
 ### Character Encoding
 
-The library employs multiple optimized character sets:
-
-· Years: Base-61 encoding (3 characters for 0-226,980 range)
-· Months: 12-character set (A-L)
-· Days: 31-character set (A-Z,1-5)
-· Time components: Optimized character ranges avoiding ambiguous characters
-· Zero compression: Special characters for repeated zeros
-
-## 🔧 Advanced Usage
-
-### Custom Date Ranges
-
-```java
-// Convert between relative and absolute years
-int absoluteYear = 2024;
-int relativeYear = BitDT.fromAbsoluteYear(absoluteYear);
-
-BitDT date = BitDT.fromPrimitives(relativeYear, 5, 15, 14, 30, 0, 0, null);
-int recoveredYear = BitDT.toAbsoluteYear(date.getYear());
-```
-
-### Efficient Storage for Databases
-
-```java
-// Store as numerical values for maximum efficiency
-long[] numericalValues = BitDT.toNumericalArray(dates);
-
-// Restore from numerical values
-List<BitDT> restoredDates = BitDT.fromNumericalArray(numericalValues);
-```
-
-### Error Handling
-
-```java
-try {
-    BitDT date = BitDT.fromPrimitives(300000, 0, 1, 0, 0, 0, 0, null);
-} catch (IllegalArgumentException e) {
-    System.out.println("Invalid year: " + e.getMessage());
-}
-
-// Invalid encodings return empty instances
-BitDT invalid = BitDT.decode("INVALID_STRING");
-System.out.println("Is empty: " + invalid.isEmpty());
-```
+- **Years**: Base-61 encoding (3 characters for 0-226,980 range)
+- **Months**: 12-character set (A-L)
+- **Days**: 31-character set (A-Z,1-5)
+- **Time components**: Optimized character ranges
+- **Zero compression**: Special characters for repeated zeros
 
 ## 🎯 Use Cases
 
 ### Ideal For:
 
-· Database timestamp storage - Reduce storage requirements by 60-80%
+- **Database timestamp storage** - Reduce storage requirements by 60-80%
+- **High-frequency logging** - Compact timestamps for log files
+- **Network protocols** - Efficient date-time transmission
+- **Embedded systems** - Low memory footprint applications
+- **Time-series databases** - High-density temporal data storage
+- **Mobile applications** - Reduce data transmission costs
+- **Caching systems** - Efficient timestamp metadata
 
-· High-frequency logging - Compact timestamps for log files
+### Performance-Sensitive Applications:
 
-· Network protocols - Efficient date-time transmission
+- Financial trading systems
+- IoT device data collection
+- Real-time analytics platforms
+- High-volume transaction processing
+- Distributed systems with frequent clock synchronization
 
-· Embedded systems - Low memory footprint applications
+## 🚀 Quick Start
 
-· Time-series databases - High-density temporal data storage
+Choose your language implementation:
 
-· Mobile applications - Reduce data transmission costs
+### For Java Projects
 
-· Caching systems - Efficient timestamp metadata
-
-#### Performance-Sensitive Applications:
-
-· Financial trading systems
-
-· IoT device data collection
-
-· Real-time analytics platforms
-
-· High-volume transaction processing
-
-· Distributed systems with frequent clock synchronization
-
-## 📊 Benchmarks
-
-### Memory Efficiency
-
-```
-Traditional Java Date: ~24 bytes
-BitDateTime encoded: ~8 bytes (66% reduction)
-BitDateTime packed: 8 bytes + 1 byte timezone (62% reduction)
+```bash
+git clone https://github.com/Danexcodr/BitDT.git
+cd BitDT/java
+# Copy src/main/java/danexcodr/time/ to your project
 ```
 
-### Encoding/Decoding Speed
+For TypeScript/JavaScript Projects
+
+```bash
+git clone https://github.com/Danexcodr/BitDT.git
+cd BitDT/typescript
+npm install
+npm run build  # Generates JavaScript files in dist/
+```
+
+📖 Basic Usage Examples
+
+Java
+
+```java
+BitDT dateTime = BitDT.fromPrimitives(2024, 5, 15, 14, 30, 45, 123, "+08:00");
+String encoded = dateTime.encode(); // "ABC123Xyz+08" (~6-10 chars)
+BitDT decoded = BitDT.decode(encoded);
+```
+
+TypeScript
+
+```typescript
+import { BitDT } from './typescript/src/BitDT';
+const dateTime = BitDT.fromPrimitives(2024, 5, 15, 14, 30, 45, 123, "+08:00");
+const encoded = dateTime.encode();
+const decoded = BitDT.decode(encoded);
+```
+
+JavaScript
+
+```javascript
+const { BitDT } = require('./typescript/dist/BitDT');
+const dateTime = BitDT.fromPrimitives(2024, 5, 15, 14, 30, 45, 123, "+08:00");
+const encoded = dateTime.encode();
+const decoded = BitDT.decode(encoded);
+```
+
+📊 Benchmarks
+
+Memory Efficiency
+
+```
+Traditional Date: ~24 bytes
+BitDT encoded: ~8 bytes (66% reduction)
+BitDT packed: 8 bytes + timezone (62% reduction)
+```
+
+Encoding/Decoding Speed
 
 ```
 Encoding: ~0.5-2 microseconds per operation
-Decoding: ~1-3 microseconds per operation  
+Decoding: ~1-3 microseconds per operation
 Bulk operations: 3-5x faster than individual objects
 ```
 
-## 🔍 API Reference
+🤝 Contributing
 
-### Core Classes
-
-#### BitDT
-
-Main date-time class with methods for:
-
-· fromPrimitives() - Create from components
-· encode()/decode() - Compact string representation
-
-· getNumericalValue() - Raw numerical form
-
-· Comparison methods (before(), after(), compareTo())
-
-#### BitDTArray
-
-Efficient bulk operations:
-
-· fromList()/toList() - Conversion
-
-· sorted() - Efficient sorting
-
-· filterByType() - Date type filtering
-
-· slice()/concat() - Array operations
-
-#### ThousandCounter
-
-Millisecond encoding:
-
-· encodeMilliseconds() - 0-999 to 2 characters
-
-· decodeMilliseconds() - Reverse encoding
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our [**Contributing Guide**](CONTRIBUTING.md) for details.
+We welcome contributions! Please see our Contributing Guide for details.
 
 1. Fork the repository
-
 2. Create a feature branch (git checkout -b feature/amazing-feature)
-
 3. Commit your changes (git commit -m 'Add amazing feature')
-
 4. Push to the branch (git push origin feature/amazing-feature)
-
 5. Open a Pull Request
 
-## 🐛 Reporting Issues
+🐛 Reporting Issues
 
 Found a bug? Please create an issue with:
 
 · Detailed description
-
 · Reproduction steps
-
 · Expected vs actual behavior
-
 · Environment details
 
-## 📝 License
+📝 License
 
-This project is licensed under the MIT License - see the [**LICENSE file**](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🙏 Acknowledgments
+🙏 Acknowledgments
 
 · Inspired by the need for efficient temporal data storage in high-performance systems
-
-· Thanks to the Java community for best practices and patterns
-
+· Thanks to the developer communities for best practices and patterns
 · Special thanks to contributors and testers
 
 ---
@@ -369,5 +193,7 @@ This project is licensed under the MIT License - see the [**LICENSE file**](LICE
 <div align="center">
 
 Ready to optimize your date-time storage? Give BitDT a ⭐ and start saving space today!
+
+Choose your implementation: Java • TypeScript/JavaScript
 
 </div>
