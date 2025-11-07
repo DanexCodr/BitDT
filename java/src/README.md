@@ -26,7 +26,7 @@ cd BitDT/java
 # Copy src/main/java/danexcodr/time/ directory to your project
 ```
 
-Option 2: Download Source Files
+#### Option 2: Download Source Files
 
 Download the Java files and add them to your project's source directory:
 
@@ -42,13 +42,13 @@ your-project/
    └── BitDTEpochTest.java  # Epoch test suite
 ```
 
-Option 3: Manual Download
+#### Option 3: Manual Download
 
 1. Download individual .java files from the java/src/main/java/danexcodr/time/ directory
 2. Place them in your project maintaining the package structure
 3. Compile with your Java compiler
 
-🔜 Package Manager Support (Coming Soon)
+## 🔜 Package Manager Support (Coming Soon)
 
 Maven Central and Gradle plugin support planned for future release.
 
@@ -66,7 +66,7 @@ Maven Central and Gradle plugin support planned for future release.
 implementation 'com.danexcodr:bitdt:1.0.0'
 ```
 
-📖 Basic Usage
+## 📖 Basic Usage
 
 ```java
 import danexcodr.time.BitDT;
@@ -95,9 +95,9 @@ BitDT decoded = BitDT.decode(encoded);
 System.out.println("Round-trip successful: " + dateTime.equals(decoded));
 ```
 
-🔧 Advanced Usage
+## 🔧 Advanced Usage
 
-Efficient Bulk Operations
+#### Efficient Bulk Operations
 
 ```java
 // Create array of dates for efficient processing
@@ -120,7 +120,7 @@ BitDTArray slice = dateArray.slice(0, 2);
 BitDTArray combined = slice.concat(dateOnly);
 ```
 
-Epoch Time Utilities
+#### Epoch Time Utilities
 
 ```java
 import danexcodr.time.BitDTEpoch;
@@ -137,7 +137,7 @@ String base36 = BitDTEpoch.toBitDT(epochMillis, 36); // Force Base36 encoding
 String withTimezone = BitDTEpoch.toBitDT(epochMillis, "+08:00", BitDTEpoch.MODE_FULL_BITDT);
 ```
 
-Different Date Types
+#### Different Date Types
 
 ```java
 // Full date-time with timezone
@@ -157,9 +157,9 @@ BitDT empty = BitDT.createEmpty();
 System.out.println("Empty: " + empty.encode());
 ```
 
-🏗️ Architecture
+## 🏗️ Architecture
 
-Bit Packing Strategy
+#### Bit Packing Strategy
 
 BitDT uses sophisticated bit packing to store all date-time components in a single 64-bit long:
 
@@ -168,16 +168,16 @@ BitDT uses sophisticated bit packing to store all date-time components in a sing
 [5 bits: Hour][6 bits: Minute][6 bits: Second][10 bits: Millis][4 bits: Reserved]
 ```
 
-Core Classes
+#### Core Classes
 
 · BitDT - Main date-time class with encoding/decoding
 · BitDTArray - Efficient bulk operations and sorting
 · BitDTEpoch - Epoch time conversion utilities
 · ThousandCounter - Millisecond encoding (0-999 to 2 characters)
 
-🧪 Testing
+## 🧪 Testing
 
-Run the comprehensive test suite:
+#### Run the comprehensive test suite:
 
 ```bash
 cd java
@@ -185,7 +185,7 @@ javac -cp src/main/java src/main/java/danexcodr/time/BitDTTest.java
 java -cp src/main/java danexcodr.time.BitDTTest
 ```
 
-🎯 Use Cases
+## 🎯 Use Cases
 
 Ideal for Java Applications:
 
@@ -195,23 +195,23 @@ Ideal for Java Applications:
 · Financial Systems - High-performance date processing
 · Logging Frameworks - Compact timestamp storage
 
-🔍 API Reference
+## 🔍 API Reference
 
-BitDT Core Methods
+#### BitDT Core Methods
 
 · fromPrimitives() - Create from individual components
 · encode()/decode() - Compact string representation
 · getNumericalValue() - Raw 64-bit numerical form
 · before()/after()/compareTo() - Date comparison
 
-BitDTArray Bulk Operations
+#### BitDTArray Bulk Operations
 
 · fromList()/toList() - Convert between list and array
 · sorted() - Efficient numerical sorting
 · filterByType() - Filter by date type
 · slice()/concat() - Array manipulation
 
-BitDTEpoch Utilities
+#### BitDTEpoch Utilities
 
 · toBitDT() - Convert epoch time to compact format
 · fromBitDT() - Convert compact format to epoch time
