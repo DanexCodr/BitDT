@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+
+# Build outputs  
+dist/
+*.tsbuildinfo
+
+# Package files
+*.tgz
+*.tar.gz
