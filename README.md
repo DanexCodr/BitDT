@@ -5,8 +5,8 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES2020%2B-yellow.svg)](https://javascript.com)
 [![Built on Phone](https://img.shields.io/badge/Built%20on%20Phone-8hrs-orange.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Issues](https://img.shields.io/github/issues/Danexcodr/BitDT.svg)](https://github.com/Danexcodr/BitDT/issues)
-[![GitHub Stars](https://img.shields.io/github/stars/Danexcodr/BitDT.svg)](https://github.com/Danexcodr/BitDT/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/DanexCodr/BitDT.svg)](https://github.com/DanexCodr/BitDT/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/DanexCodr/BitDT.svg)](https://github.com/DanexCodr/BitDT/stargazers)
 
 A highly efficient, compact date-time encoding library that provides **60-80% space savings** through advanced bit packing and character encoding techniques. Available in **multiple programming languages**.
 
