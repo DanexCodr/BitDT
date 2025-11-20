@@ -219,7 +219,7 @@ Ideal for Java Applications:
 
 ---
 
-Ready to optimize your Java application?  [← Back to Main README](./README.md)
+Ready to optimize your Java application?  [← Back to Main README](/README.md)
 <div align="center">
 
 Start saving 60-80% on date-time storage today! ⭐
