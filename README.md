@@ -3,6 +3,7 @@
 [![Java](https://img.shields.io/badge/Java-7%2B-blue.svg)](https://java.com)
 [![TypeScript](https://img.shields.io/badge/TypeScript-✓-3178C6.svg)](https://typescriptlang.org)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES2020%2B-yellow.svg)](https://javascript.com)
+[![Python](https://img.shields.io/badge/Python-3.7%2B-3776AB.svg)](https://python.org)
 [![Built on Phone](https://img.shields.io/badge/Built%20on%20Phone-8hrs-orange.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Issues](https://img.shields.io/github/issues/DanexCodr/BitDT.svg)](https://github.com/DanexCodr/BitDT/issues)
@@ -34,6 +35,11 @@ Enterprise-ready implementation with bulk operations and advanced features.
 Modern web-ready implementation with full type safety and Node.js support.
 
 **Ideal for:** Web applications, Node.js servers, full-stack development, browsers
+
+### [**Python**](./python/README.md) ✅
+Clean, efficient implementation with comprehensive testing and full feature support.
+
+**Ideal for:** Data science, web backends, scripting, machine learning pipelines, Django/Flask applications
 
 ## 📊 Performance Comparison
 
@@ -113,6 +119,15 @@ npm install
 npm run build  # Generates JavaScript files in dist/
 ```
 
+For Python Projects
+
+```bash
+git clone https://github.com/Danexcodr/BitDT.git
+cd BitDT/python
+# Copy bitdt.py to your project
+# Or install as package: pip install -e .
+```
+
 📖 Basic Usage Examples
 
 Java
@@ -141,6 +156,22 @@ const encoded = dateTime.encode();
 const decoded = BitDT.decode(encoded);
 ```
 
+Python
+
+```python
+from bitdt import BitDT
+
+# Create a BitDT instance
+date_time = BitDT.from_primitives(50000, 5, 15, 14, 30, 45, 123, "+08:00")
+encoded = date_time.encode()  # Compact string representation
+decoded = BitDT.decode(encoded)
+
+# Epoch conversion
+from bitdt import BitDTEpoch
+epoch_str = BitDTEpoch.now()  # Current time as compact string
+epoch_ms = BitDTEpoch.from_bit_dt(epoch_str)  # Back to milliseconds
+```
+
 📊 Benchmarks
 
 Memory Efficiency
@@ -159,7 +190,7 @@ Decoding: ~1-3 microseconds per operation
 Bulk operations: 3-5x faster than individual objects
 ```
 
-🤝 Contributing
+## 🤝 Contributing
 
 We welcome contributions! Please see our Contributing Guide for details.
 
@@ -169,7 +200,7 @@ We welcome contributions! Please see our Contributing Guide for details.
 4. Push to the branch (git push origin feature/amazing-feature)
 5. Open a Pull Request
 
-🐛 Reporting Issues
+## 🐛 Reporting Issues
 
 Found a bug? Please create an issue with:
 
@@ -178,11 +209,11 @@ Found a bug? Please create an issue with:
 · Expected vs actual behavior
 · Environment details
 
-📝 License
+## 📝 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-🙏 Acknowledgments
+## 🙏 Acknowledgments
 
 · Inspired by the need for efficient temporal data storage in high-performance systems
 · Thanks to the developer communities for best practices and patterns
@@ -194,6 +225,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 Ready to optimize your date-time storage? Give BitDT a ⭐ and start saving space today!
 
-Choose your implementation: Java • TypeScript/JavaScript
+Choose your implementation: Java • TypeScript/JavaScript • Python
 
 </div>
