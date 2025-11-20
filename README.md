@@ -110,7 +110,7 @@ cd BitDT/java
 # Copy src/main/java/danexcodr/time/ to your project
 ```
 
-For TypeScript/JavaScript Projects
+### For TypeScript/JavaScript Projects
 
 ```bash
 git clone https://github.com/Danexcodr/BitDT.git
@@ -119,7 +119,7 @@ npm install
 npm run build  # Generates JavaScript files in dist/
 ```
 
-For Python Projects
+### For Python Projects
 
 ```bash
 git clone https://github.com/Danexcodr/BitDT.git
@@ -128,9 +128,9 @@ cd BitDT/python
 # Or install as package: pip install -e .
 ```
 
-📖 Basic Usage Examples
+## 📖 Basic Usage Examples
 
-Java
+**Java**
 
 ```java
 BitDT dateTime = BitDT.fromPrimitives(2024, 5, 15, 14, 30, 45, 123, "+08:00");
@@ -138,7 +138,7 @@ String encoded = dateTime.encode(); // "ABC123Xyz+08" (~6-10 chars)
 BitDT decoded = BitDT.decode(encoded);
 ```
 
-TypeScript
+**TypeScript**
 
 ```typescript
 import { BitDT } from './typescript/src/BitDT';
@@ -147,7 +147,7 @@ const encoded = dateTime.encode();
 const decoded = BitDT.decode(encoded);
 ```
 
-JavaScript
+**JavaScript**
 
 ```javascript
 const { BitDT } = require('./typescript/dist/BitDT');
@@ -156,7 +156,7 @@ const encoded = dateTime.encode();
 const decoded = BitDT.decode(encoded);
 ```
 
-Python
+**Python**
 
 ```python
 from bitdt import BitDT
@@ -172,9 +172,9 @@ epoch_str = BitDTEpoch.now()  # Current time as compact string
 epoch_ms = BitDTEpoch.from_bit_dt(epoch_str)  # Back to milliseconds
 ```
 
-📊 Benchmarks
+## 📊 Benchmarks
 
-Memory Efficiency
+**Memory Efficiency**
 
 ```
 Traditional Date: ~24 bytes
@@ -182,7 +182,7 @@ BitDT encoded: ~8 bytes (66% reduction)
 BitDT packed: 8 bytes + timezone (62% reduction)
 ```
 
-Encoding/Decoding Speed
+**Encoding/Decoding Speed**
 
 ```
 Encoding: ~0.5-2 microseconds per operation
