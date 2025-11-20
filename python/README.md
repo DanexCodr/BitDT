@@ -350,7 +350,7 @@ print(f"BitDT encoded: {len(bitdt_obj.encode())} characters")
 
 ---
 
-Ready to optimize your Python application? [← Back to Main README](./README.md)
+Ready to optimize your Python application? [← Back to Main README](/README.md)
 
 <div align="center">
 
