@@ -211,7 +211,7 @@ Found a bug? Please create an issue with:
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
@@ -225,6 +225,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 Ready to optimize your date-time storage? Give BitDT a ⭐ and start saving space today!
 
-Choose your implementation: Java • TypeScript/JavaScript • Python
+Choose your implementation: [Java](./java) • [TypeScript/JavaScript](./typescript) • [Python](./python)
 
 </div>
