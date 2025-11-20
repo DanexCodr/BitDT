@@ -1,4 +1,4 @@
- BitDT for Python 🗜️⏰
+# BitDT for Python 🗜️⏰
 
 [![Python Version](https://img.shields.io/badge/Python-3.7%2B-3776AB.svg)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
