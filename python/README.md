@@ -25,7 +25,7 @@ cd BitDT/python
 # Copy bitdt.py to your project
 ```
 
-Option 2: Direct File Download
+#### Option 2: Direct File Download
 
 ```bash
 # Download the main implementation file
@@ -35,14 +35,14 @@ wget https://raw.githubusercontent.com/Danexcodr/BitDT/main/python/bitdt.py
 wget https://raw.githubusercontent.com/Danexcodr/BitDT/main/python/test_bitdt.py
 ```
 
-Option 3: Package Installation (Coming Soon)
+#### Option 3: Package Installation (Coming Soon)
 
 ```bash
 # Future PyPI support
 pip install bitdt
 ```
 
-Project Structure
+### Project Structure
 
 ```
 python/
@@ -51,7 +51,7 @@ python/
 └── README.md         # This file
 ```
 
-📖 Basic Usage
+## 📖 Basic Usage
 
 ```python
 from bitdt import BitDT, BitDTEpoch
@@ -79,9 +79,9 @@ decoded = BitDT.decode(encoded)
 print(f"Round-trip successful: {date_time == decoded}")
 ```
 
-🔧 Advanced Usage
+## 🔧 Advanced Usage
 
-Epoch Time Utilities
+**Epoch Time Utilities**
 
 ```python
 from bitdt import BitDTEpoch
@@ -103,7 +103,7 @@ now_compact = BitDTEpoch.now()
 print(f"Current time: {now_compact}")
 ```
 
-Different Date Types
+**Different Date Types**
 
 ```python
 # Full date-time with timezone
@@ -127,7 +127,7 @@ empty = BitDT.create_empty()
 print(f"Empty: {empty.encode()}")
 ```
 
-Bulk Operations with BitDTArray
+**Bulk Operations with BitDTArray**
 
 ```python
 from bitdt import BitDTArray
@@ -160,7 +160,7 @@ slice_array = date_array.slice(0, 2)
 combined_array = slice_array.concat(date_only)
 ```
 
-Sorting and Comparison
+**Sorting and Comparison**
 
 ```python
 # Create a list of dates
@@ -181,16 +181,16 @@ print(f"First after last: {first.after(last)}")
 print(f"Comparison result: {first.compare_to(last)}")
 ```
 
-🧪 Testing
+## 🧪 Testing
 
-Run Comprehensive Test Suite
+**Run Comprehensive Test Suite**
 
 ```bash
 cd python
 python test_bitdt.py
 ```
 
-Test Output Example
+**Test Output Example**
 
 ```
 🚀 BITDT PYTHON IMPLEMENTATION TEST SUITE
@@ -211,7 +211,7 @@ Test Output Example
 🎉 ALL TESTS COMPLETED SUCCESSFULLY!
 ```
 
-Manual Testing
+**Manual Testing**
 
 ```python
 # Quick verification
@@ -228,16 +228,16 @@ year_decoded = BitDT.decode_year(year_encoded)
 print(f"Year 50000 -> {year_encoded} -> {year_decoded}")
 ```
 
-🏗️ Architecture
+## 🏗️ Architecture
 
-Core Classes
+#### Core Classes
 
 · BitDT - Main date-time class with encoding/decoding
 · BitDTEpoch - Epoch time conversion utilities
 · BitDTArray - Efficient bulk operations and sorting
 · ThousandCounter - Millisecond encoding (0-999 to 2 characters)
 
-Bit Packing Strategy
+#### Bit Packing Strategy
 
 Uses Python's integer bit operations to store all date-time components efficiently:
 
@@ -253,7 +253,7 @@ MILLIS_MASK = 0x000000000003FF00
 TYPE_MASK =   0xF000000000000000
 ```
 
-🎯 Use Cases
+## 🎯 Use Cases
 
 Ideal for Python Applications:
 
@@ -265,7 +265,7 @@ Ideal for Python Applications:
 · Database Storage - Optimized timestamp columns
 · Logging - Compact timestamps in log files
 
-Integration Examples
+## Integration Examples
 
 ```python
 # With pandas
@@ -300,32 +300,32 @@ class Event(models.Model):
         return BitDT.decode(self.compact_time)
 ```
 
-🔍 API Reference
+## 🔍 API Reference
 
-BitDT Core Methods
+**BitDT Core Methods**
 
-· from_primitives() - Create from individual components
-· encode()/decode() - Compact string representation
-· get_numerical_value() - Raw numerical form
-· before()/after()/compare_to() - Date comparison
-· get_year()/get_month()/etc. - Component accessors
+· **from_primitives()** - Create from individual components
+· **encode()/decode()** - Compact string representation
+· **get_numerical_value()** - Raw numerical form
+· **before()/after()/compare_to()** - Date comparison
+· **get_year()/get_month()/etc.** - Component accessors
 
 BitDTEpoch Utilities
 
-· to_bit_dt() - Convert epoch time to compact format
-· from_bit_dt() - Convert compact format to epoch time
-· now() - Current time in compact format
+· **to_bit_dt()** - Convert epoch time to compact format
+· **from_bit_dt()** - Convert compact format to epoch time
+· **now()** - Current time in compact format
 
-BitDTArray Bulk Operations
+**BitDTArray Bulk Operations**
 
-· from_list()/to_list() - Convert between list and array
-· sorted() - Efficient numerical sorting
-· filter_by_type() - Filter by date type
-· slice()/concat() - Array manipulation
+· **from_list()/to_list()** - Convert between list and array
+· **sorted()** - Efficient numerical sorting
+· **filter_by_type()** - Filter by date type
+· **slice()/concat()** - Array manipulation
 
-📊 Performance
+## 📊 Performance
 
-Memory Efficiency
+### Memory Efficiency
 
 ```python
 import sys
@@ -341,7 +341,7 @@ print(f"BitDT object: {sys.getsizeof(bitdt_obj)} bytes")
 print(f"BitDT encoded: {len(bitdt_obj.encode())} characters")
 ```
 
-Typical Results:
+#### Typical Results:
 
 · datetime object: ~50-60 bytes
 · BitDT object: ~60-70 bytes (object overhead)
